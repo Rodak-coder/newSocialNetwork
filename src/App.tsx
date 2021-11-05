@@ -7,39 +7,49 @@ import {findAllByDisplayValue} from "@testing-library/react";
 function App() {
   return (
       <div>
-      Chomp on this
+          <AppTitle />
           <Rating />
           <Accordion />
       </div>
   );
 
+  function AppTitle(){
+      return <>Chomp on this</>
+  };
+
   function Rating() {
-    return (
+    return <>
         <Star />
-    )
+        <Star />
+        <Star />
+        <Star />
+        <Star />
+    </>
   };
 
   function Star() {
-      return (
-          <div>
-              <div>star</div>
-              <div>star</div>
-              <div>star</div>
-              <div>star</div>
-          </div>
-      )
-  }
+      return  <div>star</div>
+  };
+
   function Accordion() {
       return <div>
-          <h3>Menu</h3>
-          <ul>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-          </ul>
-
+          <AccordionTittle />
+          <AccordionBody />
       </div>
+  };
+
+  function AccordionTittle() {
+      return <h3>Menu</h3>
+  };
+
+  function AccordionBody() {
+      return <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+      </ul>
   }
+
 }
 
 export default App;
